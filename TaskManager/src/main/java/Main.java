@@ -56,7 +56,7 @@ public class Main {
                 }
 
                 case 4 -> {
-                    System.out.print("id do usário que desejea deletar: ");
+                    System.out.print("id da task que desejea deletar: ");
                     int del = enter.nextInt();
 
                     novatask.delete(del);

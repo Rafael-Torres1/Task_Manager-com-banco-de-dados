@@ -15,7 +15,7 @@ public class DaoTask {
     }
 
     public void insert(Task task){
-        String sql = "INSERT INTO usuarios (nome, task, stats) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO tarefas (nome, task, stats) VALUES (?, ?, ?)";
         try (Connection conex = getConnection();
             PreparedStatement stmt = conex.prepareStatement(sql)){
 
@@ -33,7 +33,7 @@ public class DaoTask {
     List<Task> taskList(){
         List<Task> taskList = new ArrayList<>();
 
-        String sql = "SELECT * FROM usuarios";
+        String sql = "SELECT * FROM tarefas";
 
         try(Connection conex = getConnection();
             Statement stmt = conex.createStatement();
@@ -55,7 +55,7 @@ public class DaoTask {
     }
 
     public void update(int id, String newtask){
-        String sql = "UPDATE usuarios SET stats = ? WHERE id  = ?";
+        String sql = "UPDATE tarefas SET stats = ? WHERE id  = ?";
 
         try(Connection conex = getConnection();
             PreparedStatement stmt = conex.prepareStatement(sql)){
@@ -70,7 +70,7 @@ public class DaoTask {
     }
 
     public void delete(int id){
-        String sql = "DELETE FROM usuarios WHERE id = ?";
+        String sql = "DELETE FROM tarefas WHERE id = ?";
 
         try(Connection conex = getConnection();
             PreparedStatement stmt = conex.prepareStatement(sql)){
